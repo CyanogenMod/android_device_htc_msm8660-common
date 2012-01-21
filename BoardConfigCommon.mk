@@ -29,6 +29,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
