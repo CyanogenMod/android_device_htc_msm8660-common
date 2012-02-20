@@ -48,6 +48,15 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8660 \
     libaudioutils
 
+# Omx
+PRODUCT_PACKAGES += \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
+    libOmxCore \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
