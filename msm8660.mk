@@ -88,6 +88,10 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
 
+# usb profiles
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/init.htc8660.usb.rc:root/init.htc8660.usb.rc
+
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
