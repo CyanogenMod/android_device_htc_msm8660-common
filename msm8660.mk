@@ -30,6 +30,14 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml
 
+# EGL config
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/egl.cfg:system/lib/egl/egl.cfg
+
+# Media config
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 # QCOM Display
 PRODUCT_PACKAGES += \
     copybit.msm8660 \
@@ -87,6 +95,9 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
     device/htc/msm8660-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
+
+# Wifi firmware
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
 # usb profiles
 PRODUCT_COPY_FILES += \
