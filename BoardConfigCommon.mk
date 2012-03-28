@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include device/htc/msm8660-common/BoardConfigCommon.mk
-
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
 
 TARGET_NO_BOOTLOADER := true
@@ -56,10 +54,7 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 
-BOARD_USES_QCOM_LIBS := true
-BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
-BOARD_USE_QCOM_PMEM := true
 
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
 USE_OPENGL_RENDERER := true
