@@ -99,10 +99,6 @@ PRODUCT_COPY_FILES += \
 # Wifi firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
-# usb profiles
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/init.htc8660.usb.rc:root/init.htc8660.usb.rc
-
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
