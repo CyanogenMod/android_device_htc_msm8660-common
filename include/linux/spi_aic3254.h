@@ -174,3 +174,4 @@ struct aic3254_ctl_ops {
  CODEC_SPI_CMD_PARAM *lb_headset_bmic;
 };
 #endif
+

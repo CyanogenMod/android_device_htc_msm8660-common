@@ -74,3 +74,4 @@ enum TPA2051_Mode {
 #define TPA2051_SET_PARAM _IOW(TPA2051_IOCTL_MAGIC, 0x04, unsigned)
 #define TPA2051_WRITE_REG _IOW(TPA2051_IOCTL_MAGIC, 0x07, unsigned)
 #endif
+
