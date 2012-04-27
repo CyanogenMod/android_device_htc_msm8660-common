@@ -78,3 +78,5 @@ BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 # Webkit
 TARGET_FORCE_CPU_UPLOAD := true
 DYNAMIC_SHARED_LIBV8SO := true
+
+TARGET_KERNEL_SOURCE := kernel/htc/msm8660
