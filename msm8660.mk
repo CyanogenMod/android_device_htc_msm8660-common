@@ -65,6 +65,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# HDMI
+PRODUCT_PACKAGES += \
+    hdmid
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
