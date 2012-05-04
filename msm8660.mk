@@ -30,10 +30,6 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml
 
-# EGL config
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/configs/egl.cfg:system/lib/egl/egl.cfg
-
 # Media config
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/configs/media_profiles.xml:system/etc/media_profiles.xml
