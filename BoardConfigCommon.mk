@@ -72,6 +72,9 @@ TARGET_QCOM_HDMI_OUT := true
 TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 
+# Filesystem
+BOARD_VOLD_MAX_PARTITIONS := 36
+
 # FM Radio
 #BOARD_HAVE_FM_RADIO := true
 #BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
