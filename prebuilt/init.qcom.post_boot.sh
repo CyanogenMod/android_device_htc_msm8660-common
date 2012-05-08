@@ -59,14 +59,13 @@ case "$target" in
 	 chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 	 chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
 	 chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+	 chown system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 	 chown root.system /sys/devices/system/cpu/mfreq
 	 chmod 220 /sys/devices/system/cpu/mfreq
 	 chown root.system /sys/devices/system/cpu/cpu1/online
 	 chmod 664 /sys/devices/system/cpu/cpu1/online
         ;;
 esac
-
-chown system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 
 emmc_boot=`getprop ro.emmc`
 case "$emmc_boot"
