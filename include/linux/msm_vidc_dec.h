@@ -137,396 +137,404 @@ struct vdec_ioctl_msg {
 #define VDEC_IOCTL_GET_DISABLE_DMX   _IOR(VDEC_IOCTL_MAGIC, 36, struct vdec_ioctl_msg)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define VDEC_IOCTL_GET_DISABLE_DMX_SUPPORT   _IOR(VDEC_IOCTL_MAGIC, 37, struct vdec_ioctl_msg)
+#define VDEC_IOCTL_SET_PERF_CLK   _IOR(VDEC_IOCTL_MAGIC, 38, struct vdec_ioctl_msg)
 enum vdec_picture {
  PICTURE_TYPE_I,
- PICTURE_TYPE_P,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ PICTURE_TYPE_P,
  PICTURE_TYPE_B,
  PICTURE_TYPE_BI,
  PICTURE_TYPE_SKIP,
- PICTURE_TYPE_IDR,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ PICTURE_TYPE_IDR,
  PICTURE_TYPE_UNKNOWN
 };
 enum vdec_buffer {
- VDEC_BUFFER_TYPE_INPUT,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_BUFFER_TYPE_INPUT,
  VDEC_BUFFER_TYPE_OUTPUT
 };
 struct vdec_allocatorproperty {
- enum vdec_buffer buffer_type;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ enum vdec_buffer buffer_type;
  uint32_t mincount;
  uint32_t maxcount;
  uint32_t actualcount;
- size_t buffer_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ size_t buffer_size;
  uint32_t alignment;
  uint32_t buf_poolid;
 };
-struct vdec_bufferpayload {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct vdec_bufferpayload {
  void __user *bufferaddr;
  size_t buffer_len;
  int pmem_fd;
- size_t offset;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ size_t offset;
  size_t mmaped_size;
 };
 struct vdec_setbuffer_cmd {
- enum vdec_buffer buffer_type;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ enum vdec_buffer buffer_type;
  struct vdec_bufferpayload buffer;
 };
 struct vdec_fillbuffer_cmd {
- struct vdec_bufferpayload buffer;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct vdec_bufferpayload buffer;
  void *client_data;
 };
 enum vdec_bufferflush {
- VDEC_FLUSH_TYPE_INPUT,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_FLUSH_TYPE_INPUT,
  VDEC_FLUSH_TYPE_OUTPUT,
  VDEC_FLUSH_TYPE_ALL
 };
-enum vdec_codec {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+enum vdec_codec {
  VDEC_CODECTYPE_H264 = 0x1,
  VDEC_CODECTYPE_H263 = 0x2,
  VDEC_CODECTYPE_MPEG4 = 0x3,
- VDEC_CODECTYPE_DIVX_3 = 0x4,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_CODECTYPE_DIVX_3 = 0x4,
  VDEC_CODECTYPE_DIVX_4 = 0x5,
  VDEC_CODECTYPE_DIVX_5 = 0x6,
  VDEC_CODECTYPE_DIVX_6 = 0x7,
- VDEC_CODECTYPE_XVID = 0x8,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_CODECTYPE_XVID = 0x8,
  VDEC_CODECTYPE_MPEG1 = 0x9,
  VDEC_CODECTYPE_MPEG2 = 0xa,
  VDEC_CODECTYPE_VC1 = 0xb,
- VDEC_CODECTYPE_VC1_RCV = 0xc
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_CODECTYPE_VC1_RCV = 0xc
 };
 enum vdec_mpeg2_profile {
  VDEC_MPEG2ProfileSimple = 0x1,
- VDEC_MPEG2ProfileMain = 0x2,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG2ProfileMain = 0x2,
  VDEC_MPEG2Profile422 = 0x4,
  VDEC_MPEG2ProfileSNR = 0x8,
  VDEC_MPEG2ProfileSpatial = 0x10,
- VDEC_MPEG2ProfileHigh = 0x20,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG2ProfileHigh = 0x20,
  VDEC_MPEG2ProfileKhronosExtensions = 0x6F000000,
  VDEC_MPEG2ProfileVendorStartUnused = 0x7F000000,
  VDEC_MPEG2ProfileMax = 0x7FFFFFFF
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum vdec_mpeg2_level {
  VDEC_MPEG2LevelLL = 0x1,
  VDEC_MPEG2LevelML = 0x2,
- VDEC_MPEG2LevelH14 = 0x4,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG2LevelH14 = 0x4,
  VDEC_MPEG2LevelHL = 0x8,
  VDEC_MPEG2LevelKhronosExtensions = 0x6F000000,
  VDEC_MPEG2LevelVendorStartUnused = 0x7F000000,
- VDEC_MPEG2LevelMax = 0x7FFFFFFF
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG2LevelMax = 0x7FFFFFFF
 };
 enum vdec_mpeg4_profile {
  VDEC_MPEG4ProfileSimple = 0x01,
- VDEC_MPEG4ProfileSimpleScalable = 0x02,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4ProfileSimpleScalable = 0x02,
  VDEC_MPEG4ProfileCore = 0x04,
  VDEC_MPEG4ProfileMain = 0x08,
  VDEC_MPEG4ProfileNbit = 0x10,
- VDEC_MPEG4ProfileScalableTexture = 0x20,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4ProfileScalableTexture = 0x20,
  VDEC_MPEG4ProfileSimpleFace = 0x40,
  VDEC_MPEG4ProfileSimpleFBA = 0x80,
  VDEC_MPEG4ProfileBasicAnimated = 0x100,
- VDEC_MPEG4ProfileHybrid = 0x200,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4ProfileHybrid = 0x200,
  VDEC_MPEG4ProfileAdvancedRealTime = 0x400,
  VDEC_MPEG4ProfileCoreScalable = 0x800,
  VDEC_MPEG4ProfileAdvancedCoding = 0x1000,
- VDEC_MPEG4ProfileAdvancedCore = 0x2000,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4ProfileAdvancedCore = 0x2000,
  VDEC_MPEG4ProfileAdvancedScalable = 0x4000,
  VDEC_MPEG4ProfileAdvancedSimple = 0x8000,
  VDEC_MPEG4ProfileKhronosExtensions = 0x6F000000,
- VDEC_MPEG4ProfileVendorStartUnused = 0x7F000000,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4ProfileVendorStartUnused = 0x7F000000,
  VDEC_MPEG4ProfileMax = 0x7FFFFFFF
 };
 enum vdec_mpeg4_level {
- VDEC_MPEG4Level0 = 0x01,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4Level0 = 0x01,
  VDEC_MPEG4Level0b = 0x02,
  VDEC_MPEG4Level1 = 0x04,
  VDEC_MPEG4Level2 = 0x08,
- VDEC_MPEG4Level3 = 0x10,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4Level3 = 0x10,
  VDEC_MPEG4Level4 = 0x20,
  VDEC_MPEG4Level4a = 0x40,
  VDEC_MPEG4Level5 = 0x80,
- VDEC_MPEG4LevelKhronosExtensions = 0x6F000000,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_MPEG4LevelKhronosExtensions = 0x6F000000,
  VDEC_MPEG4LevelVendorStartUnused = 0x7F000000,
  VDEC_MPEG4LevelMax = 0x7FFFFFFF
 };
-enum vdec_avc_profile {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+enum vdec_avc_profile {
  VDEC_AVCProfileBaseline = 0x01,
  VDEC_AVCProfileMain = 0x02,
  VDEC_AVCProfileExtended = 0x04,
- VDEC_AVCProfileHigh = 0x08,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_AVCProfileHigh = 0x08,
  VDEC_AVCProfileHigh10 = 0x10,
  VDEC_AVCProfileHigh422 = 0x20,
  VDEC_AVCProfileHigh444 = 0x40,
- VDEC_AVCProfileKhronosExtensions = 0x6F000000,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_AVCProfileKhronosExtensions = 0x6F000000,
  VDEC_AVCProfileVendorStartUnused = 0x7F000000,
  VDEC_AVCProfileMax = 0x7FFFFFFF
 };
-enum vdec_avc_level {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+enum vdec_avc_level {
  VDEC_AVCLevel1 = 0x01,
  VDEC_AVCLevel1b = 0x02,
  VDEC_AVCLevel11 = 0x04,
- VDEC_AVCLevel12 = 0x08,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_AVCLevel12 = 0x08,
  VDEC_AVCLevel13 = 0x10,
  VDEC_AVCLevel2 = 0x20,
  VDEC_AVCLevel21 = 0x40,
- VDEC_AVCLevel22 = 0x80,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_AVCLevel22 = 0x80,
  VDEC_AVCLevel3 = 0x100,
  VDEC_AVCLevel31 = 0x200,
  VDEC_AVCLevel32 = 0x400,
- VDEC_AVCLevel4 = 0x800,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_AVCLevel4 = 0x800,
  VDEC_AVCLevel41 = 0x1000,
  VDEC_AVCLevel42 = 0x2000,
  VDEC_AVCLevel5 = 0x4000,
- VDEC_AVCLevel51 = 0x8000,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_AVCLevel51 = 0x8000,
  VDEC_AVCLevelKhronosExtensions = 0x6F000000,
  VDEC_AVCLevelVendorStartUnused = 0x7F000000,
  VDEC_AVCLevelMax = 0x7FFFFFFF
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum vdec_divx_profile {
  VDEC_DIVXProfile_qMobile = 0x01,
  VDEC_DIVXProfile_Mobile = 0x02,
- VDEC_DIVXProfile_HD = 0x04,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_DIVXProfile_HD = 0x04,
  VDEC_DIVXProfile_Handheld = 0x08,
  VDEC_DIVXProfile_Portable = 0x10,
  VDEC_DIVXProfile_HomeTheater = 0x20
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum vdec_xvid_profile {
  VDEC_XVIDProfile_Simple = 0x1,
  VDEC_XVIDProfile_Advanced_Realtime_Simple = 0x2,
- VDEC_XVIDProfile_Advanced_Simple = 0x4
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_XVIDProfile_Advanced_Simple = 0x4
 };
 enum vdec_xvid_level {
  VDEC_XVID_LEVEL_S_L0 = 0x1,
- VDEC_XVID_LEVEL_S_L1 = 0x2,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_XVID_LEVEL_S_L1 = 0x2,
  VDEC_XVID_LEVEL_S_L2 = 0x4,
  VDEC_XVID_LEVEL_S_L3 = 0x8,
  VDEC_XVID_LEVEL_ARTS_L1 = 0x10,
- VDEC_XVID_LEVEL_ARTS_L2 = 0x20,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_XVID_LEVEL_ARTS_L2 = 0x20,
  VDEC_XVID_LEVEL_ARTS_L3 = 0x40,
  VDEC_XVID_LEVEL_ARTS_L4 = 0x80,
  VDEC_XVID_LEVEL_AS_L0 = 0x100,
- VDEC_XVID_LEVEL_AS_L1 = 0x200,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_XVID_LEVEL_AS_L1 = 0x200,
  VDEC_XVID_LEVEL_AS_L2 = 0x400,
  VDEC_XVID_LEVEL_AS_L3 = 0x800,
  VDEC_XVID_LEVEL_AS_L4 = 0x1000
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum vdec_h263profile {
  VDEC_H263ProfileBaseline = 0x01,
  VDEC_H263ProfileH320Coding = 0x02,
- VDEC_H263ProfileBackwardCompatible = 0x04,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_H263ProfileBackwardCompatible = 0x04,
  VDEC_H263ProfileISWV2 = 0x08,
  VDEC_H263ProfileISWV3 = 0x10,
  VDEC_H263ProfileHighCompression = 0x20,
- VDEC_H263ProfileInternet = 0x40,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_H263ProfileInternet = 0x40,
  VDEC_H263ProfileInterlace = 0x80,
  VDEC_H263ProfileHighLatency = 0x100,
  VDEC_H263ProfileKhronosExtensions = 0x6F000000,
- VDEC_H263ProfileVendorStartUnused = 0x7F000000,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_H263ProfileVendorStartUnused = 0x7F000000,
  VDEC_H263ProfileMax = 0x7FFFFFFF
 };
 enum vdec_h263level {
- VDEC_H263Level10 = 0x01,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_H263Level10 = 0x01,
  VDEC_H263Level20 = 0x02,
  VDEC_H263Level30 = 0x04,
  VDEC_H263Level40 = 0x08,
- VDEC_H263Level45 = 0x10,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_H263Level45 = 0x10,
  VDEC_H263Level50 = 0x20,
  VDEC_H263Level60 = 0x40,
  VDEC_H263Level70 = 0x80,
- VDEC_H263LevelKhronosExtensions = 0x6F000000,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_H263LevelKhronosExtensions = 0x6F000000,
  VDEC_H263LevelVendorStartUnused = 0x7F000000,
  VDEC_H263LevelMax = 0x7FFFFFFF
 };
-enum vdec_wmv_format {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+enum vdec_wmv_format {
  VDEC_WMVFormatUnused = 0x01,
  VDEC_WMVFormat7 = 0x02,
  VDEC_WMVFormat8 = 0x04,
- VDEC_WMVFormat9 = 0x08,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_WMVFormat9 = 0x08,
  VDEC_WMFFormatKhronosExtensions = 0x6F000000,
  VDEC_WMFFormatVendorStartUnused = 0x7F000000,
  VDEC_WMVFormatMax = 0x7FFFFFFF
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum vdec_vc1_profile {
  VDEC_VC1ProfileSimple = 0x1,
  VDEC_VC1ProfileMain = 0x2,
- VDEC_VC1ProfileAdvanced = 0x4
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_VC1ProfileAdvanced = 0x4
 };
 enum vdec_vc1_level {
  VDEC_VC1_LEVEL_S_Low = 0x1,
- VDEC_VC1_LEVEL_S_Medium = 0x2,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_VC1_LEVEL_S_Medium = 0x2,
  VDEC_VC1_LEVEL_M_Low = 0x4,
  VDEC_VC1_LEVEL_M_Medium = 0x8,
  VDEC_VC1_LEVEL_M_High = 0x10,
- VDEC_VC1_LEVEL_A_L0 = 0x20,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_VC1_LEVEL_A_L0 = 0x20,
  VDEC_VC1_LEVEL_A_L1 = 0x40,
  VDEC_VC1_LEVEL_A_L2 = 0x80,
  VDEC_VC1_LEVEL_A_L3 = 0x100,
- VDEC_VC1_LEVEL_A_L4 = 0x200
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_VC1_LEVEL_A_L4 = 0x200
 };
 struct vdec_profile_level {
  uint32_t profiles;
- uint32_t levels;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t levels;
 };
 enum vdec_interlaced_format {
  VDEC_InterlaceFrameProgressive = 0x1,
- VDEC_InterlaceInterleaveFrameTopFieldFirst = 0x2,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_InterlaceInterleaveFrameTopFieldFirst = 0x2,
  VDEC_InterlaceInterleaveFrameBottomFieldFirst = 0x4
 };
 enum vdec_output_fromat {
- VDEC_YUV_FORMAT_NV12 = 0x1,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_YUV_FORMAT_NV12 = 0x1,
  VDEC_YUV_FORMAT_TILE_4x2 = 0x2
 };
 enum vdec_output_order {
- VDEC_ORDER_DISPLAY = 0x1,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ VDEC_ORDER_DISPLAY = 0x1,
  VDEC_ORDER_DECODE = 0x2
 };
 struct vdec_picsize {
- uint32_t frame_width;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t frame_width;
  uint32_t frame_height;
  uint32_t stride;
  uint32_t scan_lines;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 struct vdec_seqheader {
  void __user *ptr_seqheader;
  size_t seq_header_len;
- int pmem_fd;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ int pmem_fd;
  size_t pmem_offset;
 };
 struct vdec_mberror {
- void __user *ptr_errormap;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ void __user *ptr_errormap;
  size_t err_mapsize;
 };
 struct vdec_input_frameinfo {
- void __user *bufferaddr;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ void __user *bufferaddr;
  size_t offset;
  size_t datalen;
  uint32_t flags;
- int64_t timestamp;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ int64_t timestamp;
  void *client_data;
  int pmem_fd;
  size_t pmem_offset;
- void __user *desc_addr;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ void __user *desc_addr;
  uint32_t desc_size;
 };
 struct vdec_framesize {
- uint32_t left;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t left;
  uint32_t top;
  uint32_t right;
  uint32_t bottom;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
+struct vdec_aspectratioinfo {
+ uint32_t aspect_ratio;
+ uint32_t par_width;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t par_height;
+};
 struct vdec_output_frameinfo {
  void __user *bufferaddr;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  size_t offset;
  size_t len;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t flags;
  int64_t time_stamp;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  enum vdec_picture pic_type;
  void *client_data;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  void *input_frame_clientdata;
  struct vdec_framesize framesize;
- enum vdec_interlaced_format interlaced_format;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ enum vdec_interlaced_format interlaced_format;
+ struct vdec_aspectratioinfo aspect_ratio_info;
+};
 union vdec_msgdata {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct vdec_output_frameinfo output_frame;
  void *input_frame_clientdata;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct vdec_msginfo {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t status_code;
  uint32_t msgcode;
  union vdec_msgdata msgdata;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  size_t msgdatasize;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct vdec_framerate {
  unsigned long fps_denominator;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned long fps_numerator;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct vdec_h264_mv{
  size_t size;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int count;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int pmem_fd;
  int offset;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct vdec_mv_buff_size{
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int width;
  int height;
  int size;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int alignment;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #endif
-
