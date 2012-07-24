@@ -17,6 +17,9 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/htc/msm8660
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -31,13 +34,37 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DNO_QCOM_MVS
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
-# Scorpion optimizations
-TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
-TARGET_USE_SCORPION_PLD_SET := true
-TARGET_SCORPION_BIONIC_PLDOFFS := 6
-TARGET_SCORPION_BIONIC_PLDSIZE := 128
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+
+# Audio
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+
+# Camera
+COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
+BOARD_NEEDS_MEMORYHEAPPMEM := true
+
+# Filesystem
+BOARD_VOLD_MAX_PARTITIONS := 36
+
+# FM Radio
+#BOARD_HAVE_FM_RADIO := true
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+
+# GPS
+BOARD_USES_QCOM_GPS := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+
+# Graphics
+USE_OPENGL_RENDERER := true
+TARGET_NO_HW_VSYNC := true
+TARGET_USES_C2D_COMPOSITION := true
+BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
@@ -51,45 +78,7 @@ WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-# Audio
-#COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-#TARGET_USES_QCOM_LPA := true
-
-COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-
-# Graphics
-USE_OPENGL_RENDERER := true
-TARGET_HAVE_BYPASS := false
-TARGET_USES_C2D_COMPOSITION := true
-TARGET_USES_OVERLAY := true
-TARGET_QCOM_HDMI_OUT := true
-TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
-BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
-
-BOARD_HAVE_HTC_FFC := true
-
-# Filesystem
-BOARD_VOLD_MAX_PARTITIONS := 36
-
-# FM Radio
-#BOARD_HAVE_FM_RADIO := true
-#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
-DYNAMIC_SHARED_LIBV8SO := true
-
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
-
-TARGET_KERNEL_SOURCE := kernel/htc/msm8660
