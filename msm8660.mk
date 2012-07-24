@@ -48,6 +48,8 @@ PRODUCT_PACKAGES += \
     audio_policy.msm8660 \
     audio.primary.msm8660 \
     libaudioutils
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Omx
 PRODUCT_PACKAGES += \
