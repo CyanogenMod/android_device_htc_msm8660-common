@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Qualcomm scripts
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+    device/htc/msm8660-common/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -31,7 +35,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
-# QCOM Display
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio_policy.msm8660 \
+    audio.primary.msm8660 \
+    libaudioutils
+
+# Graphics
 PRODUCT_PACKAGES += \
     copybit.msm8660 \
     gralloc.msm8660 \
@@ -42,16 +53,7 @@ PRODUCT_PACKAGES += \
     libQcomUI \
     libtilerenderer
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    audio_policy.msm8660 \
-    audio.primary.msm8660 \
-    libaudioutils
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/configs/audio_policy.conf:system/etc/audio_policy.conf
-
-# Omx
+# OMX
 PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libI420colorconvert \
@@ -67,17 +69,24 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hdmid
 
-# Misc
+# Torch
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory \
     Torch
+
+# USB
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
-# 8660 Common Firmware
+# Media config
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/audio_policy.conf:system/etc/audio_policy.conf
+
+# MSM8660 firmware
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
     device/htc/msm8660-common/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
@@ -85,11 +94,6 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
     device/htc/msm8660-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
-
-# Common Qualcomm scripts
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-    device/htc/msm8660-common/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi
