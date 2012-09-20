@@ -85,12 +85,9 @@ PRODUCT_PACKAGES += \
 
 # MSM8660 firmware
 PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
-    device/htc/msm8660-common/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
-    device/htc/msm8660-common/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
-    device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
     device/htc/msm8660-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
-    device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
+    device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
+    device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi
