@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
-
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
