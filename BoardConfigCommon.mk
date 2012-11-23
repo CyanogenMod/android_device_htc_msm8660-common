@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+BOARD_VENDOR := htc
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
