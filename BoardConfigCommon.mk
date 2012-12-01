@@ -71,3 +71,4 @@ BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
+DYNAMIC_SHARED_LIBV8SO := true
