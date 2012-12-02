@@ -14,6 +14,8 @@
 
 BOARD_VENDOR := htc
 
+TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
