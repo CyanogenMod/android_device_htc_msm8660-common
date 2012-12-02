@@ -43,6 +43,9 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8660 \
     libaudioutils
 
+# GPS
+-include device/common/gps/gps_us_supl.mk
+
 # Graphics
 PRODUCT_PACKAGES += \
     copybit.msm8660 \
