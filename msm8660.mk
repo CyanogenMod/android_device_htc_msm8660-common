@@ -86,6 +86,11 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
+# Media configuration
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/msm8660-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 # MSM8660 firmware
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
