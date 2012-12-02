@@ -89,6 +89,10 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
     device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw
 
+# Thermal configuration
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/thermald.conf:system/etc/thermald.conf
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
