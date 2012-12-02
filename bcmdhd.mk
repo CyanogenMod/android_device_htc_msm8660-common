@@ -28,6 +28,9 @@ WIFI_DRIVER_MODULE_NAME          := bcmdhd
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
+# Broadcom BCM43xx chips are WiFi/BT capable
+BOARD_HAVE_BLUETOOTH_BCM         := true
+
 # Copy Bluetooth firmware, since BCM4329 is a BT/WiFi chip
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
