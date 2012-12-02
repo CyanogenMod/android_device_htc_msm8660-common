@@ -22,9 +22,9 @@
 #include <linux/msm_mdp.h>
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MSM_ROTATOR_IOCTL_MAGIC 'R'
-#define MSM_ROTATOR_IOCTL_START   _IOWR(MSM_ROTATOR_IOCTL_MAGIC, 1, struct msm_rotator_img_info)
-#define MSM_ROTATOR_IOCTL_ROTATE   _IOW(MSM_ROTATOR_IOCTL_MAGIC, 2, struct msm_rotator_data_info)
-#define MSM_ROTATOR_IOCTL_FINISH   _IOW(MSM_ROTATOR_IOCTL_MAGIC, 3, int)
+#define MSM_ROTATOR_IOCTL_START _IOWR(MSM_ROTATOR_IOCTL_MAGIC, 1, struct msm_rotator_img_info)
+#define MSM_ROTATOR_IOCTL_ROTATE _IOW(MSM_ROTATOR_IOCTL_MAGIC, 2, struct msm_rotator_data_info)
+#define MSM_ROTATOR_IOCTL_FINISH _IOW(MSM_ROTATOR_IOCTL_MAGIC, 3, int)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define ROTATOR_VERSION_01 0xA5B4C301
 enum rotator_clk_type {
@@ -69,7 +69,6 @@ struct msm_rotator_platform_data {
  unsigned int hardware_version_number;
  struct msm_rot_clocks *rotator_clks;
  const char *regulator_name;
- struct msm_bus_scale_pdata *bus_scale_table;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif

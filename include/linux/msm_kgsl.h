@@ -49,7 +49,7 @@
 #define KGSL_CLK_MEM_IFACE 0x00000010
 #define KGSL_CLK_AXI 0x00000020
 #define KGSL_MAX_PWRLEVELS 5
-#define KGSL_CONVERT_TO_MBPS(val)   (val*1000*1000U)
+#define KGSL_CONVERT_TO_MBPS(val) (val*1000*1000U)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 enum kgsl_deviceid {
  KGSL_DEVICE_3D0 = 0x00000000,
@@ -92,7 +92,7 @@ struct kgsl_devmemstore {
  unsigned int sbz5;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-#define KGSL_DEVICE_MEMSTORE_OFFSET(field)   offsetof(struct kgsl_devmemstore, field)
+#define KGSL_DEVICE_MEMSTORE_OFFSET(field) offsetof(struct kgsl_devmemstore, field)
 enum kgsl_timestamp_type {
  KGSL_TIMESTAMP_CONSUMED = 0x00000001,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
@@ -147,19 +147,19 @@ struct kgsl_device_getproperty {
  unsigned int sizebytes;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-#define IOCTL_KGSL_DEVICE_GETPROPERTY   _IOWR(KGSL_IOC_TYPE, 0x2, struct kgsl_device_getproperty)
+#define IOCTL_KGSL_DEVICE_GETPROPERTY _IOWR(KGSL_IOC_TYPE, 0x2, struct kgsl_device_getproperty)
 struct kgsl_device_regread {
  unsigned int offsetwords;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int value;
 };
-#define IOCTL_KGSL_DEVICE_REGREAD   _IOWR(KGSL_IOC_TYPE, 0x3, struct kgsl_device_regread)
+#define IOCTL_KGSL_DEVICE_REGREAD _IOWR(KGSL_IOC_TYPE, 0x3, struct kgsl_device_regread)
 struct kgsl_device_waittimestamp {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int timestamp;
  unsigned int timeout;
 };
-#define IOCTL_KGSL_DEVICE_WAITTIMESTAMP   _IOW(KGSL_IOC_TYPE, 0x6, struct kgsl_device_waittimestamp)
+#define IOCTL_KGSL_DEVICE_WAITTIMESTAMP _IOW(KGSL_IOC_TYPE, 0x6, struct kgsl_device_waittimestamp)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct kgsl_ringbuffer_issueibcmds {
  unsigned int drawctxt_id;
@@ -169,35 +169,35 @@ struct kgsl_ringbuffer_issueibcmds {
  unsigned int timestamp;
  unsigned int flags;
 };
-#define IOCTL_KGSL_RINGBUFFER_ISSUEIBCMDS   _IOWR(KGSL_IOC_TYPE, 0x10, struct kgsl_ringbuffer_issueibcmds)
+#define IOCTL_KGSL_RINGBUFFER_ISSUEIBCMDS _IOWR(KGSL_IOC_TYPE, 0x10, struct kgsl_ringbuffer_issueibcmds)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct kgsl_cmdstream_readtimestamp {
  unsigned int type;
  unsigned int timestamp;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IOCTL_KGSL_CMDSTREAM_READTIMESTAMP_OLD   _IOR(KGSL_IOC_TYPE, 0x11, struct kgsl_cmdstream_readtimestamp)
-#define IOCTL_KGSL_CMDSTREAM_READTIMESTAMP   _IOWR(KGSL_IOC_TYPE, 0x11, struct kgsl_cmdstream_readtimestamp)
+#define IOCTL_KGSL_CMDSTREAM_READTIMESTAMP_OLD _IOR(KGSL_IOC_TYPE, 0x11, struct kgsl_cmdstream_readtimestamp)
+#define IOCTL_KGSL_CMDSTREAM_READTIMESTAMP _IOWR(KGSL_IOC_TYPE, 0x11, struct kgsl_cmdstream_readtimestamp)
 struct kgsl_cmdstream_freememontimestamp {
  unsigned int gpuaddr;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int type;
  unsigned int timestamp;
 };
-#define IOCTL_KGSL_CMDSTREAM_FREEMEMONTIMESTAMP   _IOW(KGSL_IOC_TYPE, 0x12, struct kgsl_cmdstream_freememontimestamp)
+#define IOCTL_KGSL_CMDSTREAM_FREEMEMONTIMESTAMP _IOW(KGSL_IOC_TYPE, 0x12, struct kgsl_cmdstream_freememontimestamp)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IOCTL_KGSL_CMDSTREAM_FREEMEMONTIMESTAMP_OLD   _IOR(KGSL_IOC_TYPE, 0x12, struct kgsl_cmdstream_freememontimestamp)
+#define IOCTL_KGSL_CMDSTREAM_FREEMEMONTIMESTAMP_OLD _IOR(KGSL_IOC_TYPE, 0x12, struct kgsl_cmdstream_freememontimestamp)
 struct kgsl_drawctxt_create {
  unsigned int flags;
  unsigned int drawctxt_id;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-#define IOCTL_KGSL_DRAWCTXT_CREATE   _IOWR(KGSL_IOC_TYPE, 0x13, struct kgsl_drawctxt_create)
+#define IOCTL_KGSL_DRAWCTXT_CREATE _IOWR(KGSL_IOC_TYPE, 0x13, struct kgsl_drawctxt_create)
 struct kgsl_drawctxt_destroy {
  unsigned int drawctxt_id;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
-#define IOCTL_KGSL_DRAWCTXT_DESTROY   _IOW(KGSL_IOC_TYPE, 0x14, struct kgsl_drawctxt_destroy)
+#define IOCTL_KGSL_DRAWCTXT_DESTROY _IOW(KGSL_IOC_TYPE, 0x14, struct kgsl_drawctxt_destroy)
 struct kgsl_map_user_mem {
  int fd;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
@@ -209,7 +209,7 @@ struct kgsl_map_user_mem {
  enum kgsl_user_mem_type memtype;
  unsigned int reserved;
 };
-#define IOCTL_KGSL_MAP_USER_MEM   _IOWR(KGSL_IOC_TYPE, 0x15, struct kgsl_map_user_mem)
+#define IOCTL_KGSL_MAP_USER_MEM _IOWR(KGSL_IOC_TYPE, 0x15, struct kgsl_map_user_mem)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct kgsl_sharedmem_from_pmem {
  int pmem_fd;
@@ -218,12 +218,12 @@ struct kgsl_sharedmem_from_pmem {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int offset;
 };
-#define IOCTL_KGSL_SHAREDMEM_FROM_PMEM   _IOWR(KGSL_IOC_TYPE, 0x20, struct kgsl_sharedmem_from_pmem)
+#define IOCTL_KGSL_SHAREDMEM_FROM_PMEM _IOWR(KGSL_IOC_TYPE, 0x20, struct kgsl_sharedmem_from_pmem)
 struct kgsl_sharedmem_free {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int gpuaddr;
 };
-#define IOCTL_KGSL_SHAREDMEM_FREE   _IOW(KGSL_IOC_TYPE, 0x21, struct kgsl_sharedmem_free)
+#define IOCTL_KGSL_SHAREDMEM_FREE _IOW(KGSL_IOC_TYPE, 0x21, struct kgsl_sharedmem_free)
 struct kgsl_cff_user_event {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned char cff_opcode;
@@ -236,7 +236,7 @@ struct kgsl_cff_user_event {
  unsigned int __pad[2];
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IOCTL_KGSL_CFF_USER_EVENT   _IOW(KGSL_IOC_TYPE, 0x31, struct kgsl_cff_user_event)
+#define IOCTL_KGSL_CFF_USER_EVENT _IOW(KGSL_IOC_TYPE, 0x31, struct kgsl_cff_user_event)
 struct kgsl_gmem_desc {
  unsigned int x;
  unsigned int y;
@@ -266,22 +266,22 @@ struct kgsl_bind_gmem_shadow {
  unsigned int buffer_id;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IOCTL_KGSL_DRAWCTXT_BIND_GMEM_SHADOW   _IOW(KGSL_IOC_TYPE, 0x22, struct kgsl_bind_gmem_shadow)
+#define IOCTL_KGSL_DRAWCTXT_BIND_GMEM_SHADOW _IOW(KGSL_IOC_TYPE, 0x22, struct kgsl_bind_gmem_shadow)
 struct kgsl_sharedmem_from_vmalloc {
  unsigned int gpuaddr;
  unsigned int hostptr;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int flags;
 };
-#define IOCTL_KGSL_SHAREDMEM_FROM_VMALLOC   _IOWR(KGSL_IOC_TYPE, 0x23, struct kgsl_sharedmem_from_vmalloc)
-#define IOCTL_KGSL_SHAREDMEM_FLUSH_CACHE   _IOW(KGSL_IOC_TYPE, 0x24, struct kgsl_sharedmem_free)
+#define IOCTL_KGSL_SHAREDMEM_FROM_VMALLOC _IOWR(KGSL_IOC_TYPE, 0x23, struct kgsl_sharedmem_from_vmalloc)
+#define IOCTL_KGSL_SHAREDMEM_FLUSH_CACHE _IOW(KGSL_IOC_TYPE, 0x24, struct kgsl_sharedmem_free)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct kgsl_drawctxt_set_bin_base_offset {
  unsigned int drawctxt_id;
  unsigned int offset;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IOCTL_KGSL_DRAWCTXT_SET_BIN_BASE_OFFSET   _IOW(KGSL_IOC_TYPE, 0x25, struct kgsl_drawctxt_set_bin_base_offset)
+#define IOCTL_KGSL_DRAWCTXT_SET_BIN_BASE_OFFSET _IOW(KGSL_IOC_TYPE, 0x25, struct kgsl_drawctxt_set_bin_base_offset)
 enum kgsl_cmdwindow_type {
  KGSL_CMDWINDOW_MIN = 0x00000000,
  KGSL_CMDWINDOW_2D = 0x00000000,
@@ -298,7 +298,7 @@ struct kgsl_cmdwindow_write {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int data;
 };
-#define IOCTL_KGSL_CMDWINDOW_WRITE   _IOW(KGSL_IOC_TYPE, 0x2e, struct kgsl_cmdwindow_write)
+#define IOCTL_KGSL_CMDWINDOW_WRITE _IOW(KGSL_IOC_TYPE, 0x2e, struct kgsl_cmdwindow_write)
 struct kgsl_gpumem_alloc {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned long gpuaddr;
@@ -306,14 +306,14 @@ struct kgsl_gpumem_alloc {
  unsigned int flags;
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define IOCTL_KGSL_GPUMEM_ALLOC   _IOWR(KGSL_IOC_TYPE, 0x2f, struct kgsl_gpumem_alloc)
+#define IOCTL_KGSL_GPUMEM_ALLOC _IOWR(KGSL_IOC_TYPE, 0x2f, struct kgsl_gpumem_alloc)
 struct kgsl_cff_syncmem {
  unsigned int gpuaddr;
  unsigned int len;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int __pad[2];
 };
-#define IOCTL_KGSL_CFF_SYNCMEM   _IOW(KGSL_IOC_TYPE, 0x30, struct kgsl_cff_syncmem)
+#define IOCTL_KGSL_CFF_SYNCMEM _IOW(KGSL_IOC_TYPE, 0x30, struct kgsl_cff_syncmem)
 struct kgsl_timestamp_event {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int type;
@@ -323,7 +323,7 @@ struct kgsl_timestamp_event {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  size_t len;
 };
-#define IOCTL_KGSL_TIMESTAMP_EVENT   _IOW(KGSL_IOC_TYPE, 0x31, struct kgsl_timestamp_event)
+#define IOCTL_KGSL_TIMESTAMP_EVENT _IOW(KGSL_IOC_TYPE, 0x31, struct kgsl_timestamp_event)
 #define KGSL_TIMESTAMP_EVENT_GENLOCK 1
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct kgsl_timestamp_event_genlock {
