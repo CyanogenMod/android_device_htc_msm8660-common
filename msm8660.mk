@@ -44,7 +44,8 @@ PRODUCT_PACKAGES += \
     libaudioutils
 
 # GPS
--include device/common/gps/gps_us_supl.mk
+PRODUCT_COPY_FILES += \
+    device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
 
 # Graphics
 PRODUCT_PACKAGES += \
