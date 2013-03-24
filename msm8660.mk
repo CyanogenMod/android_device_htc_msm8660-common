@@ -39,7 +39,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio_policy.msm8660 \
-    audio_policy.conf \
     audio.primary.msm8660 \
     libaudioutils
 
@@ -91,7 +90,9 @@ PRODUCT_PACKAGES += \
 # Media configuration
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/msm8660-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/msm8660-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/htc/msm8660-common/configs/audio_policy.conf:system/etc/audio_policy.conf
+
 
 # MSM8660 firmware
 PRODUCT_COPY_FILES += \
