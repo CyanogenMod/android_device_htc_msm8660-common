@@ -84,6 +84,8 @@ TARGET_USES_C2D_COMPOSITION := true
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 
 # Lights
+# legacy LIBLIGHT naming
+TARGET_PROVIDES_LIBLIGHT := true
 TARGET_PROVIDES_LIBLIGHTS := true
 
 # Webkit
